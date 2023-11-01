@@ -14,8 +14,8 @@ public class CreateShoeCommandValidator : AbstractValidator<CreateShoeCommand>
 {
     public CreateShoeCommandValidator()
     {
-        RuleFor(_ => _.Shoe).SetValidator(new UpsertShoeValidator());
-        RuleFor(_ => _.Shoe.ManufacturerId).NotNull();
+        RuleFor(c => c.Shoe).SetValidator(new UpsertShoeValidator());
+        RuleFor(c => c.Shoe.ManufacturerId).NotNull();
     }
 }
 

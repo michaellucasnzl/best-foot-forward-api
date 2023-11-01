@@ -18,8 +18,8 @@ public class ShoeDto
         public Mapping()
         {
             CreateMap<Shoe, ShoeDto>()
-                .ForMember(_ => _.ColourCode, _ => _.MapFrom(__ => __.Colour.ToString()))
-                .ForMember(_ => _.ManufacturerName, _ => _.MapFrom(__ => __.Manufacturer!.Name));
+                .ForMember(d => d.ColourCode, e => e.MapFrom(s => s.Colour.ToString()))
+                .ForMember(d => d.ManufacturerName, e => e.MapFrom(s => s.Manufacturer!.Name));
         }
     }
 }

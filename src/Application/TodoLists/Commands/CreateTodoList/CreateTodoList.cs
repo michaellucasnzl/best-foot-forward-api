@@ -15,7 +15,6 @@ public class CreateTodoListCommandHandler : IRequestHandler<CreateTodoListComman
     public CreateTodoListCommandHandler(IApplicationDbContext context, IMapper mapper)
     {
         _context = context;
-        _
     }
 
     public async Task<int> Handle(CreateTodoListCommand request, CancellationToken cancellationToken)

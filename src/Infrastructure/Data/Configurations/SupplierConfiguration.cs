@@ -9,8 +9,8 @@ public class SupplierConfiguration : IEntityTypeConfiguration<Supplier>
     public void Configure(EntityTypeBuilder<Supplier> builder)
     {
         builder.Property(t => t.Name).HasMaxLength(200).IsRequired();
-        builder.HasOne<Address>(_ => _.Address);
-        builder.HasMany(_ => _.SupplierShoes).WithOne(_ => _.Supplier);
+        builder.HasOne<Address>(s => s.Address);
+        builder.HasMany(s => s.SupplierShoes).WithOne(s => s.Supplier);
 
     }
 }

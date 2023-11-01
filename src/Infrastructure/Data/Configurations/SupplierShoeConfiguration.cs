@@ -9,9 +9,9 @@ public class SupplierShoeConfiguration : IEntityTypeConfiguration<SupplierShoe>
 {
     public void Configure(EntityTypeBuilder<SupplierShoe> builder)
     {
-        builder.Property(_ => _.WholesalePrice).IsRequired().HasColumnType(Strings.PriceColumnType);
-        builder.HasOne<Supplier>(_ => _.Supplier).WithMany(_ => _.SupplierShoes);
-        builder.HasOne<Shoe>(_ => _.Shoe).WithMany(_ => _.SupplierShoes);
+        builder.Property(s => s.WholesalePrice).IsRequired().HasColumnType(Strings.PriceColumnType);
+        builder.HasOne<Supplier>(s => s.Supplier).WithMany(s => s.SupplierShoes);
+        builder.HasOne<Shoe>(s => s.Shoe).WithMany(s => s.SupplierShoes);
 
     }
 }

@@ -9,7 +9,7 @@ public class ShopConfiguration : IEntityTypeConfiguration<Shop>
     public void Configure(EntityTypeBuilder<Shop> builder)
     {
         builder.Property(t => t.Name).HasMaxLength(200).IsRequired();
-        builder.HasOne<Address>(_ => _.Address);
-        builder.HasMany(_ => _.ShopShoes).WithOne(_ => _.Shop);
+        builder.HasOne<Address>(s => s.Address);
+        builder.HasMany(s => s.ShopShoes).WithOne(s => s.Shop);
     }
 }
