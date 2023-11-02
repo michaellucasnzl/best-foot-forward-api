@@ -2,11 +2,7 @@
 
 namespace BestFootForwardApi.Application.Manufacturers.Queries.GetManufacturers;
 
-public record GetManufacturersQuery : IRequest<ManufacturersDto>
-{
-}
-
-public class ManufacturersDto
+public record GetManufacturersQuery : IRequest<GetManufacturersDto>
 {
 }
 
@@ -17,7 +13,7 @@ public class GetManufacturersQueryValidator : AbstractValidator<GetManufacturers
     }
 }
 
-public class GetManufacturersQueryHandler : IRequestHandler<GetManufacturersQuery, ManufacturersDto>
+public class GetManufacturersQueryHandler : IRequestHandler<GetManufacturersQuery, GetManufacturersDto>
 {
     private readonly IApplicationDbContext _context;
 
@@ -26,7 +22,7 @@ public class GetManufacturersQueryHandler : IRequestHandler<GetManufacturersQuer
         _context = context;
     }
 
-    public async Task<ManufacturersDto> Handle(GetManufacturersQuery request, CancellationToken cancellationToken)
+    public async Task<GetManufacturersDto> Handle(GetManufacturersQuery request, CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
     }
