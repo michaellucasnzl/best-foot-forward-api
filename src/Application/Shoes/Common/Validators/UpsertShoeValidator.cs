@@ -7,7 +7,7 @@ public class UpsertShoeValidator: AbstractValidator<Shoe>
     public UpsertShoeValidator()
     {
         RuleFor(s => s).NotNull();
-        RuleFor(s => s.Name).NotEmpty();
+        RuleFor(s => s.Name).NotEmpty().MaximumLength(50);
         RuleFor(s => s.Colour).NotNull().NotEmpty();
         RuleFor(s => s.Size).NotNull().GreaterThanOrEqualTo(0);
         RuleFor(s => s.Description).MaximumLength(500);

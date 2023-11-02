@@ -15,7 +15,7 @@ public class Shoes : EndpointGroupBase
             .MapPost(CreateShoe);
     }
 
-    public async Task<PaginatedList<ShoeDto>> GetShoes(ISender sender, [AsParameters] GetShoesQuery query)
+    public async Task<PaginatedList<ShoeDto>> GetShoes(ISender sender, GetShoesQuery query)
     {
         return await sender.Send(query);
     }

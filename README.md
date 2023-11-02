@@ -1,6 +1,6 @@
 ﻿# BestFootForwardApi
 
-The project was generated using the [Clean.Architecture.Solution.Template](https://github.com/jasontaylordev/BestFootForwardApi) version 8.0.0-preview.7.2.
+The project was generated using the [Clean.Architecture.Solution.Template](https://github.com/jasontaylordev/CleanArchitecture) version 8.0.0-preview.7.2.
 
 ## Build
 

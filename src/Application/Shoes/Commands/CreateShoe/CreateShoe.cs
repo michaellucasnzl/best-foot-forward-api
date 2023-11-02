@@ -1,5 +1,4 @@
 ﻿using BestFootForwardApi.Application.Common.Interfaces;
-using BestFootForwardApi.Application.Shoes.Common;
 using BestFootForwardApi.Application.Shoes.Common.Validators;
 using BestFootForwardApi.Domain.Entities;
 
@@ -7,7 +6,7 @@ namespace BestFootForwardApi.Application.Shoes.Commands.CreateShoe;
 
 public record CreateShoeCommand : IRequest<Guid>
 {
-    public required Shoe Shoe { get; set; }
+    public required Shoe Shoe { get; set; } //todo: do we want domain objects passed in here? Ideally not. Create a different object here and do a mapping to a domain object.
 }
 
 public class CreateShoeCommandValidator : AbstractValidator<CreateShoeCommand>
@@ -35,9 +34,9 @@ public class CreateShoeCommandHandler : IRequestHandler<CreateShoeCommand, Guid>
             Name = request.Shoe!.Name,
             Size = request.Shoe!.Size,
             Colour = request.Shoe!.Colour,
-            CreatedBy = "todo: Get username or Id from bearer token",
             ManufacturerId = request.Shoe.ManufacturerId,
-            Description = request.Shoe.Description
+            Description = request.Shoe.Description,
+            ImageUrl = request.Shoe.ImageUrl
         };
 
         _context.Shoes.Add(entity);

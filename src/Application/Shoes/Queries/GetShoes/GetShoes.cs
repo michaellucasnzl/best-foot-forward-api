@@ -26,7 +26,6 @@ public class GetShoesQueryHandler : IRequestHandler<GetShoesQuery, PaginatedList
     private readonly IApplicationDbContext _context;
     private readonly IMapper _mapper;
 
-    
     public GetShoesQueryHandler(IApplicationDbContext context, IMapper mapper)
     {
         _context = context;
@@ -51,7 +50,8 @@ public class GetShoesQueryHandler : IRequestHandler<GetShoesQuery, PaginatedList
 
         if (request.SupplierId != null)
         {
-            var supplierShoeIds = await _context.SupplierShoes.AsNoTracking().Where(s => s.SupplierId.Equals(request.SupplierId) )
+            var supplierShoeIds = await _context.SupplierShoes.AsNoTracking()
+                .Where(s => s.SupplierId.Equals(request.SupplierId))
                 .Select(s => s.ShoeId).Distinct().ToListAsync(cancellationToken: cancellationToken);
             query = query.Where(s => supplierShoeIds.Contains(s.Id));
         }
@@ -60,7 +60,7 @@ public class GetShoesQueryHandler : IRequestHandler<GetShoesQuery, PaginatedList
             .ProjectTo<ShoeDto>(_mapper.ConfigurationProvider)
             .OrderBy(d => d.Name)
             .PaginatedListAsync(request.SearchQuery.PageNumber, request.SearchQuery.PageSize);
-        
+
         return result;
     }
 }

@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using AutoMapper;
 using BestFootForwardApi.Application.Common.Interfaces;
 using BestFootForwardApi.Application.Common.Models;
+using BestFootForwardApi.Application.Shoes.Common.Dtos;
 using BestFootForwardApi.Application.TodoItems.Queries.GetTodoItemsWithPagination;
 using BestFootForwardApi.Application.TodoLists.Queries.GetTodos;
 using BestFootForwardApi.Domain.Entities;
@@ -35,6 +36,7 @@ public class MappingTests
     [TestCase(typeof(TodoList), typeof(LookupDto))]
     [TestCase(typeof(TodoItem), typeof(LookupDto))]
     [TestCase(typeof(TodoItem), typeof(TodoItemBriefDto))]
+    [TestCase(typeof(Shoe), typeof(ShoeDto))]
     public void ShouldSupportMappingFromSourceToDestination(Type source, Type destination)
     {
         var instance = GetInstanceOf(source);

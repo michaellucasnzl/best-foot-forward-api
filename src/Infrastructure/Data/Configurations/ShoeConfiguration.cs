@@ -9,7 +9,7 @@ public class ShoeConfiguration : IEntityTypeConfiguration<Shoe>
 {
     public void Configure(EntityTypeBuilder<Shoe> builder)
     {
-        builder.Property(t => t.Name).HasMaxLength(200).IsRequired();
+        builder.Property(t => t.Name).HasMaxLength(50).IsRequired();
         builder.Property(t => t.Colour).IsRequired().HasConversion(c => c.ToString(), s => Colour.From(s));
         builder.Property(t => t.Size).IsRequired();
         builder.Property(t => t.Description).HasMaxLength(500);
