@@ -1,5 +1,6 @@
 ﻿using BestFootForwardApi.Application.Common.Exceptions;
 using BestFootForwardApi.Application.Shoes.Commands.CreateShoe;
+using BestFootForwardApi.Application.Shoes.Common.Dtos;
 using BestFootForwardApi.Application.TodoLists.Commands.CreateTodoList;
 using BestFootForwardApi.Domain.Entities;
 using BestFootForwardApi.Domain.ValueObjects;
@@ -15,12 +16,13 @@ public class CreateShoeTests : BaseTestFixture
     {
         var command = new CreateShoeCommand
         {
-            Shoe = new Shoe()
+            Shoe = new CreateShoeDto
             {
-                Colour = Colour.Green,
                 Name = "123456789012345678901234567890123456789012345678901234567890",
                 Size = 10,
-                ManufacturerId = new Guid()
+                ManufacturerId = new Guid(),
+                ColourCode = Colour.Green,
+                ManufacturerName = "ManufacturerName"
             }
         };
 
@@ -33,9 +35,10 @@ public class CreateShoeTests : BaseTestFixture
     {
         var userId = await RunAsDefaultUserAsync();
 
-        var shoe = new Shoe
+        var shoe = new CreateShoeDto
         {
-            Colour = Colour.Green,
+            ColourCode = Colour.Green,
+            ManufacturerName = "ManufacturerName",
             Name = "Test shoe",
             Size = 10,
             ManufacturerId = new Guid(), //todo: first create manufacturer.

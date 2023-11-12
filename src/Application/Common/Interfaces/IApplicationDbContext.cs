@@ -8,7 +8,7 @@ public interface IApplicationDbContext
 
     DbSet<TodoItem> TodoItems { get; }
 
-    DbSet<Manufacturer> Manufacturer { get; }
+    DbSet<Manufacturer> Manufacturers { get; }
     DbSet<Shop> Shops { get; }
     DbSet<Supplier> Suppliers { get; }
     DbSet<SupplierShoe> SupplierShoes { get; }
