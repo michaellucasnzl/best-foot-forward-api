@@ -1,8 +1,6 @@
 ﻿using BestFootForwardApi.Application.Shoes.Queries.GetShoes;
-using BestFootForwardApi.Application.TodoLists.Queries.GetTodos;
 using BestFootForwardApi.Domain.Entities;
 using BestFootForwardApi.Domain.ValueObjects;
-using Microsoft.VisualStudio.TestPlatform.CrossPlatEngine;
 
 namespace BestFootForwardApi.Application.FunctionalTests.Shoes.Queries;
 

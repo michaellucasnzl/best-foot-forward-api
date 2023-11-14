@@ -34,6 +34,8 @@ public class GetManufacturersQueryHandler : IRequestHandler<GetManufacturersQuer
             .OrderBy(x => x.Name)
             .PaginatedListAsync(request.SearchQuery.PageNumber, request.SearchQuery.PageSize);
 
+        
+        
         return result;
     }
 }

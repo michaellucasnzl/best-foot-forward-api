@@ -1,7 +1,6 @@
 ﻿using BestFootForwardApi.Application.Common.Exceptions;
 using BestFootForwardApi.Application.Shoes.Commands.CreateShoe;
-using BestFootForwardApi.Application.Shoes.Common.Dtos;
-using BestFootForwardApi.Application.TodoLists.Commands.CreateTodoList;
+
 using BestFootForwardApi.Domain.Entities;
 using BestFootForwardApi.Domain.ValueObjects;
 

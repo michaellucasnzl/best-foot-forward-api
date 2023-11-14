@@ -1,5 +1,4 @@
 ﻿using BestFootForwardApi.Application.Common.Interfaces;
-using BestFootForwardApi.Application.Common.Mappings;
 using BestFootForwardApi.Application.Manufacturers.Common;
 using BestFootForwardApi.Domain.Entities;
 
@@ -32,6 +31,7 @@ public class GetManufacturerQueryHandler : IRequestHandler<GetManufacturerQuery,
     public async Task<ManufacturerBaseDto> Handle(GetManufacturerQuery request, CancellationToken cancellationToken)
     {
         var entity = await _context.Manufacturers.AsNoTracking()
+            .Include(x => x.Shoes)
             .Where(x => x.Id.Equals(request.Id))
             .ProjectTo<GetManufacturerDto>(_mapper.ConfigurationProvider)
             .FirstOrDefaultAsync(cancellationToken);
