@@ -14,12 +14,12 @@
     <PackageVersion Include="FluentValidation.DependencyInjectionExtensions" Version="11.8.0" />
     <PackageVersion Include="MediatR" Version="12.1.1" />
     <PackageVersion Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.0-rc.2.23480.2" />
-    <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0-rc.2.23480.2" />
-    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.0-rc.2.23480.2" />
+    <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
+    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.0" />
     <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0-rc.2.23480.2" />
     <PackageVersion Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.0-preview.7.23375.9" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="8.0.0-rc.2.23480.1" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.0-rc.2.23480.1" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.0" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0-rc.2.23480.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
