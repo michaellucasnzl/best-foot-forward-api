@@ -6,7 +6,7 @@ namespace BestFootForwardApi.Application.Manufacturers.Queries.GetManufacturer;
 
 public class GetManufacturerDto : ManufacturerBaseDto
 {
-    public List<ShoeDto> Shoes { get; set; }
+    public List<ShoeDto> Shoes { get; set; } = new();
 
     private class Mapping : Profile
     {
