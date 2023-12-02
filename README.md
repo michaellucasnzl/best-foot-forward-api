@@ -54,5 +54,12 @@ To run the tests:
 dotnet test
 ```
 
+## Database Migrations
+dotnet ef migrations add "NewDomain" --project src/Infrastructure --startup-project src/Web --output-dir Data\Migrations
+
+## Running the API
+
+
+~~~~
 ## Help
 To learn more about the template go to the [project website](https://github.com/JasonTaylorDev/BestFootForwardApi). Here you can find additional guidance, request new features, report a bug, and discuss the template with other users.
