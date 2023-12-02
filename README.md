@@ -58,6 +58,14 @@ dotnet test
 dotnet ef migrations add "NewDomain" --project src/Infrastructure --startup-project src/Web --output-dir Data\Migrations
 
 ## Running the API
+You can run the API without installing Postgres by first running a container for Postgres. Then ensure the container connection string settings are in the appsettings.json.
+1. Pull the postgres image: docker pull postgres
+2. Run the image in the background: docker run --name postgres-container -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres
+3. Run the API: dotnet run
+
+
+
+
 
 
 ~~~~

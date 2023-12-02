@@ -9,13 +9,13 @@ public class Shoes : EndpointGroupBase
 {
     public override void Map(WebApplication app)
     {
-        app.MapGroup(this)
-            .RequireAuthorization()
-            .MapGet(GetShoes)
-            .MapPost(CreateShoe);
+        // app.MapGroup(this)
+        //     .RequireAuthorization()
+        //     .MapGet(GetShoes)
+        //     .MapPost(CreateShoe);
     }
 
-    public async Task<PaginatedList<ShoeDto>> GetShoes(ISender sender, GetShoesQuery query)
+    public async Task<PaginatedList<ShoeDto>> GetShoes(ISender sender, [AsParameters]GetShoesQuery query)
     {
         return await sender.Send(query);
     }
