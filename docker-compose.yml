@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: BestFootForwardDb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mysecretpassword
+    ports:
+      - "5432:5432"
+    networks:
+      - your_network
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile # Path to your API Dockerfile
+    depends_on:
+      - postgres
+    ports:
+      - "80:80"
+    networks:
+      - your_network
+
+networks:
+  your_network:
+    driver: bridge
