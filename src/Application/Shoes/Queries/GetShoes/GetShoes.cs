@@ -5,13 +5,11 @@ using BestFootForwardApi.Application.Shoes.Common.Dtos;
 
 namespace BestFootForwardApi.Application.Shoes.Queries.GetShoes;
 
-public record GetShoesQuery : IRequest<PaginatedList<ShoeDto>>
+public record GetShoesQuery : SearchQuery, IRequest<PaginatedList<ShoeDto>>
 {
     public Guid? ManufacturerId { get; set; }
     public Guid? ShopId { get; set; }
     public Guid? SupplierId { get; set; }
-
-    public SearchQuery SearchQuery { get; set; } = new();
 }
 
 public class GetShoesQueryValidator : AbstractValidator<GetShoesQuery>
@@ -59,7 +57,7 @@ public class GetShoesQueryHandler : IRequestHandler<GetShoesQuery, PaginatedList
         var result = await query
             .ProjectTo<ShoeDto>(_mapper.ConfigurationProvider)
             .OrderBy(d => d.Name)
-            .PaginatedListAsync(request.SearchQuery.PageNumber, request.SearchQuery.PageSize);
+            .PaginatedListAsync(request.PageNumber, request.PageSize);
 
         return result;
     }

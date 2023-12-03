@@ -4,9 +4,9 @@ using BestFootForwardApi.Application.Common.Models;
 
 namespace BestFootForwardApi.Application.Manufacturers.Queries.GetManufacturers;
 
-public record GetManufacturersQuery : IRequest<PaginatedList<ManufacturerListItem>>
+public record GetManufacturersQuery : SearchQuery, IRequest<PaginatedList<ManufacturerListItem>>
 {
-    public SearchQuery SearchQuery { get; set; } = new();
+    
 }
 
 public class GetManufacturersQueryValidator : AbstractValidator<GetManufacturersQuery>
@@ -32,9 +32,7 @@ public class GetManufacturersQueryHandler : IRequestHandler<GetManufacturersQuer
         var result = await _context.Manufacturers.AsNoTracking()
             .ProjectTo<ManufacturerListItem>(_mapper.ConfigurationProvider)
             .OrderBy(x => x.Name)
-            .PaginatedListAsync(request.SearchQuery.PageNumber, request.SearchQuery.PageSize);
-
-        
+            .PaginatedListAsync(request.PageNumber, request.PageSize);
         
         return result;
     }

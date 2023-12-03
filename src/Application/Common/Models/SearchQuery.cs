@@ -1,6 +1,6 @@
 namespace BestFootForwardApi.Application.Common.Models;
 
-public class SearchQuery
+public record SearchQuery
 {
     public string? Terms { get; set; }
     public int PageNumber { get; init; } = 1;
