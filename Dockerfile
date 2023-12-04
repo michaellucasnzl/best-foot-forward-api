@@ -11,6 +11,7 @@ COPY ./tests/Application.FunctionalTests/Application.FunctionalTests.csproj ./te
 COPY ./tests/Application.UnitTests/Application.UnitTests.csproj ./tests/Application.UnitTests/Application.UnitTests.csproj
 COPY ./tests/Domain.UnitTests/Domain.UnitTests.csproj ./tests/Domain.UnitTests/Domain.UnitTests.csproj
 COPY ./tests/Infrastructure.IntegrationTests/Infrastructure.IntegrationTests.csproj ./tests/Infrastructure.IntegrationTests/Infrastructure.IntegrationTests.csproj
+COPY Directory.Build.props ./
 
 RUN dotnet restore ./BestFootForwardApi.sln
 
