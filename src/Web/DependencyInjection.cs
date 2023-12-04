@@ -40,6 +40,7 @@ public static class DependencyInjection
         services.AddEndpointsApiExplorer();
 
         services.AddOpenApiDocument((configure, sp) =>
+        
         {
             configure.Title = "BestFootForwardApi API";
 
@@ -59,6 +60,27 @@ public static class DependencyInjection
             });
 
             configure.OperationProcessors.Add(new AspNetCoreOperationSecurityScopeProcessor("JWT"));
+            
+            configure.PostProcess = document =>
+            {
+                document.Info = new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Best Foot Forward API",
+                    Description = "An ASP.NET Core Web API for managing shoes",
+                    TermsOfService = "https://example.com/terms",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Michael Lucas",
+                        Url = "https://github.com/michaellucasnzl"
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "Example License",
+                        Url = "https://example.com/license"
+                    }
+                };
+            };
         });
 
         return services;
