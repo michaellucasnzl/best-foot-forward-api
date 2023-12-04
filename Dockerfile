@@ -3,14 +3,14 @@ WORKDIR /app
 
 # Restoring packages can be done from just csproj
 COPY BestFootForwardApi.sln ./
-COPY ./src/Application/Application.csproj ./app/src/Application
-COPY ./src/Domain/Domain.csproj ./app/src/Domain
-COPY ./src/Infrastructure/Infrastructure.csproj ./app/src/Infrastructure
-COPY ./src/Web/Web.csproj ./app/src/Web
-COPY ./tests/Application.FunctionalTests/Application.FunctionalTests.csproj ./app/tests/Application.FunctionalTests
-COPY ./tests/Application.UnitTests/Application.UnitTests.csproj ./app/tests/Application.UnitTests
-COPY ./tests/Domain.UnitTests/Domain.UnitTests.csproj ./app/tests/Domain.UnitTests
-COPY ./tests/Infrastructure.IntegrationTests/Infrastructure.IntegrationTests.csproj ./app/tests/Infrastructure.IntegrationTests
+COPY ./src/Application/Application.csproj ./src/Application/Application.csproj
+COPY ./src/Domain/Domain.csproj ./src/Domain/Domain.csproj
+COPY ./src/Infrastructure/Infrastructure.csproj ./src/Infrastructure/Infrastructure.csproj
+COPY ./src/Web/Web.csproj ./src/Web/Web.csproj
+COPY ./tests/Application.FunctionalTests/Application.FunctionalTests.csproj ./tests/Application.FunctionalTests/Application.FunctionalTests.csproj
+COPY ./tests/Application.UnitTests/Application.UnitTests.csproj ./tests/Application.UnitTests/Application.UnitTests.csproj
+COPY ./tests/Domain.UnitTests/Domain.UnitTests.csproj ./tests/Domain.UnitTests/Domain.UnitTests.csproj
+COPY ./tests/Infrastructure.IntegrationTests/Infrastructure.IntegrationTests.csproj ./tests/Infrastructure.IntegrationTests/Infrastructure.IntegrationTests.csproj
 
 RUN dotnet restore ./BestFootForwardApi.sln
 
