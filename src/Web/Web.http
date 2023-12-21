@@ -1,5 +1,5 @@
 ﻿# For more info on HTTP files go to https://aka.ms/vs/httpfile
-@Web_HostAddress = https://localhost:5001
+@Web_HostAddress = https://localhost:8080
 
 @Username=administrator@localhost
 @Password=Administrator1!
@@ -35,12 +35,6 @@ Content-Type: application/json
 {
   "refreshToken": ""
 }
-
-###
-
-# GET WeatherForecast
-GET {{Web_HostAddress}}/api/WeatherForecasts
-Authorization: Bearer {{BearerToken}}
 
 ###
 

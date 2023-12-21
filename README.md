@@ -62,7 +62,7 @@ You can run the API without installing PostgreSQL by first running a container f
 3. Run the API: dotnet run
 
 ## Next
-Fix dockerfile build step
+Run the API in Docker and view the Swagger
 ~~~~
 
 

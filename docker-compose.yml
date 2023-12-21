@@ -15,13 +15,16 @@ services:
   api:
     build:
       context: .
-      dockerfile: Dockerfile # Path to your API Dockerfile
+      dockerfile: Dockerfile 
     depends_on:
       - postgres
     ports:
-      - "80:80"
+      - "8080:80"
     networks:
       - your_network
+    volumes:
+      - ./logs:/app/logs    
+    command: ["tail", "-f", "/dev/null"]
 
 networks:
   your_network:
