@@ -4,15 +4,15 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="Ardalis.GuardClauses" Version="4.1.1" />
+    <PackageVersion Include="Ardalis.GuardClauses" Version="4.2.0" />
     <PackageVersion Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
-    <PackageVersion Include="Azure.Extensions.AspNetCore.Configuration.Secrets" Version="1.2.2" />
-    <PackageVersion Include="Azure.Identity" Version="1.10.3" />
+    <PackageVersion Include="Azure.Extensions.AspNetCore.Configuration.Secrets" Version="1.3.0" />
+    <PackageVersion Include="Azure.Identity" Version="1.10.4" />
     <PackageVersion Include="coverlet.collector" Version="6.0.0" />
     <PackageVersion Include="FluentAssertions" Version="7.0.0-alpha.3" />
     <PackageVersion Include="FluentValidation.AspNetCore" Version="11.3.0" />
-    <PackageVersion Include="FluentValidation.DependencyInjectionExtensions" Version="11.8.0" />
-    <PackageVersion Include="MediatR" Version="12.1.1" />
+    <PackageVersion Include="FluentValidation.DependencyInjectionExtensions" Version="11.8.1" />
+    <PackageVersion Include="MediatR" Version="12.2.0" />
     <PackageVersion Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.0" />
     <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
     <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.0" />
